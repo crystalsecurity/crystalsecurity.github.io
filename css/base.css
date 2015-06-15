@@ -559,3 +559,7 @@ footer .social a:hover img {
     margin-bottom: 40px;
   }
 }
+
+input[type="submit"]:hover {
+  background-color: #fe6a48 !important;
+}
