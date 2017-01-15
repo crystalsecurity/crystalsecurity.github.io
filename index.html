@@ -247,7 +247,17 @@
 <input type="hidden" name="_subject" value="Crystal Security - Contact" />
 <input type="text" name="_gotcha" style="display:none" />
 <textarea rows="4" cols="50" style="height: 80px;width: 484px;margin-bottom: 10px;padding-left: 5px;border: 3px solid #e1e1e1;font-size: 16px;" name="message" placeholder="Message"></textarea>
-<input type="submit" value="Send" style="background-color: #dd4b39;text-align: center;border: 0;color: #fff;display: block;width: 101%;font-size: 22px;font-weight: bolder;padding: 8px 0 8px 0; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;cursor: pointer;">
+
+<p>Please verify your status by checking radio button:</p>
+
+<input onclick="myFunction2()" type="radio" name="type" checked="checked"/>
+<label>I am a robot</label><br>
+<input onclick="myFunction2()" type="radio" name="type"/>
+<label>I am a spam bot</label><br>
+<input onclick="myFunction()" type="radio" name="type"/>
+<label>I am a not robot</label><br><br>
+
+<input type="submit" id="submitbutton" value="Send" style="background-color: #dd4b39;text-align: center;border: 0;color: #fff;display: block;width: 101%;font-size: 22px;font-weight: bolder;padding: 8px 0 8px 0; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;cursor: pointer;">
 </form>
 			</div>
 		</div>
@@ -349,5 +359,39 @@
 		} 		
     	}   
 	</script>
+
+	<script type="text/javascript">
+
+(function() {
+   document.getElementById("submitbutton").disabled = true;
+   document.getElementById("submitbutton").style.visibility = "hidden";
+})();
+
+function myFunction() {
+    var greeting;
+    var time = new Date().getHours();
+    if (time < 10) {
+        greeting = "Good morning";
+    } else if (time < 20) {
+        greeting = "Good day";
+    } else {
+        greeting = "Good evening";
+    }
+    
+    if (greeting == "Good evening" || greeting == "Good day" || greeting == "Good morning")
+	{
+        document.getElementById("submitbutton").disabled = false;
+        document.getElementById("submitbutton").style.visibility = "visible";
+	}
+    else {
+        document.getElementById("submitbutton").disabled = true;
+    }
+}
+
+function myFunction2() {
+document.getElementById("submitbutton").disabled = true;
+}
+</script>
+
 </body>
 </html>
