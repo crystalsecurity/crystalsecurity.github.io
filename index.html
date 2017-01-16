@@ -363,12 +363,11 @@ function myFunction() {
 		document.getElementById("submitbutton").type = "text";
      		return false;
 	} else {
-
+		var formurl = "//formspree.io/info@crystalsecurity.eu";
+        	$("form#contact").attr("action", formurl);
 		document.getElementById("submitbutton").disabled = false;
         	document.getElementById("submitbutton").style.visibility = "visible";
 		document.getElementById("submitbutton").type = "submit";
-     		var formurl = '//formspree.io/info@crystalsecurity.eu';
-        	$("form#contact").attr("action", formurl);
 	}
 }
 
