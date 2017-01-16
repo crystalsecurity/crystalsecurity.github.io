@@ -357,6 +357,7 @@
 
 	<script type="text/javascript">
 function myFunction() {
+	var a  = document.getElementById("messagearea").value;
 	if(a.search("http")!=-1 || a.search("www")!=-1 || a.search("href=")!=-1 || a.search(".com")!=-1 || a.search(".ru")!=-1){
      		document.getElementById("submitbutton").disabled = true;
 		document.getElementById("submitbutton").style.visibility = "hidden";
