@@ -241,12 +241,12 @@
 			<p>Please feel free to contact at any time with questions, requests or if you need any help.</p>
 <div style="border-bottom: 1px dotted #dadada;margin-bottom: 20px;padding-bottom: 10px;width: 511px;margin-left: 23%;"></div>
 
-<form action="//formspree.io/info@crystalsecurity.eu" method="POST">
+<form action="//formspree.io/info@crystalsecurity.eu" onsubmit="return validateForm()" method="POST">
 <p><input type="text" name="name" placeholder="Name" style="height: 18px;width: 495px;margin-bottom: 10px;padding-left: 5px;border: 3px solid #e1e1e1;font-size: 16px;text-align: left;"></p>
 <p><input type="email" name="email" placeholder="Email" style="height: 18px;width: 495px;margin-bottom: 10px;padding-left: 5px;border: 3px solid #e1e1e1;font-size: 16px;text-align: left;"></p>
 <input type="hidden" name="_subject" value="Crystal Security - Contact" />
 <input type="text" name="_gotcha" style="display:none" />
-<textarea rows="4" cols="50" style="height: 80px;width: 484px;margin-bottom: 10px;padding-left: 5px;border: 3px solid #e1e1e1;font-size: 16px;" name="message" placeholder="Message"></textarea>
+<textarea rows="4" cols="50" style="height: 80px;width: 484px;margin-bottom: 10px;padding-left: 5px;border: 3px solid #e1e1e1;font-size: 16px;" name="message" id="messagearea" placeholder="Message"></textarea>
 
 <input onclick="myFunction2()" type="button" value="I am a robot" name="type" style="background-color: #333;text-align: center;border: 0;color: #fff;display: block;width: 101%;font-size: 17px;padding: 8px 0 8px 0; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;cursor: pointer;"/><br>
 <input onclick="myFunction()" type="button" value="I am not a robot" name="type" style="background-color: #339843;text-align: center;border: 0;color: #fff;display: block;width: 101%;font-size: 17px;padding: 8px 0 8px 0; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;cursor: pointer;"/>
@@ -385,6 +385,20 @@ document.getElementById("submitbutton").disabled = true;
 document.getElementById("submitbutton").style.visibility = "hidden";
 document.getElementById("submitbutton").type = "text";
 }
+
+function validateForm() {
+
+var a  = document.getElementById("messagearea").value;
+
+if(a.search("http")!=-1 || a.search("www")!=-1){
+     //exist
+     alert("exist");
+     return false;
+} else {
+     return true;
+}
+}
+
 </script>
 
 </body>
