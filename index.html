@@ -66,6 +66,25 @@
 
   </script>
 
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "content": {
+    "href": "http://www.crystalsecurity.eu/privacy-policy/"
+  }
+})});
+</script>
+
 </head>
 <body>
 
@@ -384,6 +403,5 @@ if(a.search("http")!=-1 || a.search("www")!=-1 || a.search("href=")!=-1 || a.sea
 }
 
 </script>
-
 </body>
 </html>
